@@ -1,0 +1,39 @@
+# rosservice call /ariac/agv1 "{shipment_type: 'order_0_shipment_0'}"
+# rosservice call /ariac/agv2 "{shipment_type: 'order_0_shipment_1'}"
+# Total score: 18
+
+models_to_spawn:
+  agv2::kit_tray_2:
+    models:
+      part_0:
+        type: gasket_part
+        pose:
+          xyz: [-0.12256111547590082, 0.07714549370867174, 0.0]
+          rpy: [0.0, 0.0, -2.09224130008687]
+      part_1:
+        type: gear_part
+        pose:
+          xyz: [0.18255783516786045, 0.20118881049733323, 0.0]
+          rpy: [0.0, 0.0, 2.019159425978131]
+      part_2:
+        type: piston_rod_part
+        pose:
+          xyz: [0.054085110591099536, -0.18132481082248186, 0.0]
+          rpy: [0.0, 0.0, 1.4727865540748004]
+  agv1::kit_tray_1:
+    models:
+      part_0:
+        type: gasket_part
+        pose:
+          xyz: [-0.12256111547590082, 0.07714549370867174, 0.0]
+          rpy: [0.0, 0.0, -2.09224130008687]
+      part_1:
+        type: gear_part
+        pose:
+          xyz: [0.18255783516786045, 0.20118881049733323, 0.0]
+          rpy: [0.0, 0.0, 2.019159425978131]
+      part_2:
+        type: piston_rod_part
+        pose:
+          xyz: [0.054085110591099536, -0.18132481082248186, 0.0]
+          rpy: [0.0, 0.0, 1.4727865540748004]

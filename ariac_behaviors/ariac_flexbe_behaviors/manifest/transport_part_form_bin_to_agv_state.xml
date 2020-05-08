@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="transport_part_form_bin_to_agv_state">
+
+	<executable package_path="ariac_flexbe_behaviors.transport_part_form_bin_to_agv_state_sm" class="transport_part_form_bin_to_agv_stateSM" />
+	<tagstring>ariac</tagstring>
+	<author>Gerard Harkema</author>
+	<date>Wed Apr 22 2020</date>
+	<description>
+		transports part from it's bin to the selected agv
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+
+</behavior>

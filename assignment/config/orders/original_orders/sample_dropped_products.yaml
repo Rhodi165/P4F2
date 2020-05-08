@@ -1,0 +1,94 @@
+# In this scenario:
+# - There is one order of one shipment.
+# - The gripper will become faulty at various instances:
+#   - A gear_part will be dropped above a bin.
+#   - A piston_rod_part will be dropped above an AGV.
+
+options:
+  insert_models_over_bins: true
+  spawn_extra_models: false
+  model_type_aliases:
+    order_part1: piston_rod_part
+    order_part2: gear_part
+
+orders:
+  order_0:
+    announcement_condition: time
+    announcement_condition_value: 0.0
+    shipment_count: 1
+    products:
+      product_0:
+        type: order_part1
+        pose:
+          xyz: [0.1, -0.2, 0]
+          rpy: [0, 0, 0]
+      product_1:
+        type: order_part1
+        pose:
+          xyz: [-0.1, -0.2, 0]
+          rpy: [0, 0, 0]
+      product_2:
+        type: order_part2
+        pose:
+          xyz: [0.15, 0.15, 0]
+          rpy: [0, 0, 0]
+      product_3:
+        type: order_part2
+        pose:
+          xyz: [-0.15, 0.15, 0]
+          rpy: [0, 0, 0]
+      product_4:
+        type: order_part2
+        pose:
+          xyz: [0.0, 0.15, 0]
+          rpy: [0, 0, 0]
+
+models_over_bins:
+  bin3:
+    models:
+      gear_part:
+        xyz_start: [0.1, 0.1, 0.0]
+        xyz_end: [0.4, 0.4, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 3
+        num_models_y: 5
+  bin5:
+    models:
+      piston_rod_part:
+        xyz_start: [0.1, 0.1, 0.0]
+        xyz_end: [0.5, 0.5, 0.0]
+        rpy: [0, 0, 'pi/4']
+        num_models_x: 3
+        num_models_y: 3
+
+drops:
+  drop_regions:
+    shipping_box_0_impeding:
+      frame: agv1::kit_tray_1
+      min:
+        xyz: [-0.3, -0.3, 0.0]
+      max:
+        xyz: [0.3, 0.3, 0.5]
+      destination:
+        xyz: [0.3, 0.3, 0.05]
+        rpy: [0, 0, 0.2]
+      product_type_to_drop: piston_rod_part
+    shipping_box_1_impeding:
+      frame: agv2::kit_tray_2
+      min:
+        xyz: [-0.3, -0.3, 0.0]
+      max:
+        xyz: [0.3, 0.3, 0.5]
+      destination:
+        xyz: [0.15, 0.15, 0.05]
+        rpy: [0, 0, 0.2]
+      product_type_to_drop: piston_rod_part
+    bin3_reachable:
+      min:
+        xyz: [-0.65, -0.7, 0.8]
+      max:
+        xyz: [0, -0.05, 1.1]
+      destination:
+        xyz: [-0.3, 0.383, 0.76]
+        rpy: [0, 0, 0.5]
+      product_type_to_drop: gear_part

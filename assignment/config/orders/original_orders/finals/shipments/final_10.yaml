@@ -1,0 +1,60 @@
+# Rename gear parts on tray 2 to avoid faulty part names
+# rosservice call /ariac/agv1 "{shipment_type: 'order_0_shipment_0'}"
+# rosservice call /ariac/agv2 "{shipment_type: 'order_0_shipment_1'}"
+# Total score: 30
+
+models_to_spawn:
+  agv1::kit_tray_1:
+    models:
+      part_0:
+        type: pulley_part
+        pose:
+          xyz: [0.09961396349896091, -0.18352296599790935, 0.05]
+          rpy: ['pi', 0.0, 2.7911217277674236]
+      part_1:
+        type: pulley_part
+        pose:
+          xyz: [-0.11328683569837977, 0.01642759263758975, 0.05]
+          rpy: ['pi', 0.0, 1.6837170998522417]
+      part_2:
+        type: pulley_part
+        pose:
+          xyz: [0.11721104030230169, 0.2160921659103794, 0.05]
+          rpy: ['pi', 0.0, 1.578640520457797]
+      part_3:
+        type: gear_part
+        pose:
+          xyz: [-0.1153692749076165, -0.20236630329499278, 0.0]
+          rpy: [0.0, 0.0, 2.064513232380281]
+      part_4:
+        type: gear_part
+        pose:
+          xyz: [-0.08527903193188661, 0.24650401618947632, 0.0]
+          rpy: [0.0, 0.0, 0.519023031751233]
+  agv2::kit_tray_2:
+    models:
+      part_0:
+        type: pulley_part
+        pose:
+          xyz: [0.09961396349896091, -0.18352296599790935, 0.05]
+          rpy: ['pi', 0.0, 2.7911217277674236]
+      part_1:
+        type: pulley_part
+        pose:
+          xyz: [-0.11328683569837977, 0.01642759263758975, 0.05]
+          rpy: ['pi', 0.0, 1.6837170998522417]
+      part_2:
+        type: pulley_part
+        pose:
+          xyz: [0.11721104030230169, 0.2160921659103794, 0.05]
+          rpy: ['pi', 0.0, 1.578640520457797]
+      part_3:
+        type: gear_part
+        pose:
+          xyz: [-0.1153692749076165, -0.20236630329499278, 0.0]
+          rpy: [0.0, 0.0, 2.064513232380281]
+      part_4:
+        type: gear_part
+        pose:
+          xyz: [-0.08527903193188661, 0.24650401618947632, 0.0]
+          rpy: [0.0, 0.0, 0.519023031751233]

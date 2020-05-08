@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="transport_part_from_belt_to_bin_state">
+
+	<executable package_path="ariac_flexbe_behaviors.transport_part_from_belt_to_bin_state_sm" class="transport_part_from_belt_to_bin_stateSM" />
+	<tagstring>ariac</tagstring>
+	<author>Gerard Harkema</author>
+	<date>Thu Apr 23 2020</date>
+	<description>
+		Transports a part from pelt to a its own bin.
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+
+</behavior>

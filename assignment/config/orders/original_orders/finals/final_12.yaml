@@ -1,0 +1,117 @@
+# ARIAC 2019 Final 12
+# Agility challenges: High Priority Order, Faulty Products
+# Two orders one shipment each
+# High priority order uses different parts from first
+# Both arms must be used, but they don't need to interact
+# Non-faulty parts of one type are only available from the conveyor
+
+time_limit: 500
+
+options:
+  insert_models_over_bins: true
+  spawn_extra_models: true
+  belt_population_cycles: 5
+  gazebo_state_logging: true
+
+orders:
+  order_0:
+    announcement_condition: time
+    announcement_condition_value: 0.0
+    shipment_count: 1
+    destinations: [agv1]
+    products:
+      part_0:
+        type: disk_part
+        pose:
+          xyz: [-0.08628362792008677, 0.041515328806660534, 0.0]
+          rpy: [0.0, 0.0, -0.8613268580663047]
+      part_1:
+        type: disk_part
+        pose:
+          xyz: [-0.0004714645453549049, -0.24097266533481954, 0.0]
+          rpy: [0.0, 0.0, -2.9306520458590706]
+      part_2:
+        type: gasket_part
+        pose:
+          xyz: [0.0716901213673026, 0.1706761304708202, 0.0]
+          rpy: [0.0, 0.0, -1.4415060538198634]
+      part_3:
+        type: gear_part
+        pose:
+          xyz: [0.17636108642576714, -0.03567600775231927, 0.0]
+          rpy: [0.0, 0.0, 2.970572885668707]
+  order_1:
+    announcement_condition: time
+    announcement_condition_value: 28.0
+    shipment_count: 1
+    destinations: [agv2]
+    products:
+      part_0:
+        type: pulley_part
+        pose:
+          xyz: [0.1108846351123259, 0.005466378855429943, 0.0]
+          rpy: [0.0, 0.0, -2.2305646396214693]
+      part_1:
+        type: piston_rod_part
+        pose:
+          xyz: [-0.09695505728058401, 0.19809153383037872, 0.0]
+          rpy: [0.0, 0.0, 1.0762961092446002]
+      part_2:
+        type: piston_rod_part
+        pose:
+          xyz: [-0.09086755057577971, -0.1977951983990695, 0.0]
+          rpy: [0.0, 0.0, -0.47165352201541166]
+
+models_over_bins:
+  bin1:
+    models:
+      pulley_part:
+        xyz_start: [0.28, 0.28, 0.0]
+        xyz_end: [0.28, 0.28, 0.0]
+        rpy: [0, 0, 0.28]
+        num_models_x: 1
+        num_models_y: 1
+  bin2:
+    models:
+      piston_rod_part:
+        xyz_start: [0.25, 0.28, 0.0]
+        xyz_end: [0.35, 0.28, 0.0]
+        rpy: [0, 0, 0.28]
+        num_models_x: 2
+        num_models_y: 1
+  bin4:
+    models:
+      gear_part:
+        xyz_start: [0.28, 0.28, 0.0]
+        xyz_end: [0.28, 0.28, 0.0]
+        rpy: [0, 0, 0.28]
+        num_models_x: 1
+        num_models_y: 1
+  bin5:
+    models:
+      gasket_part:
+        xyz_start: [0.28, 0.28, 0.0]
+        xyz_end: [0.28, 0.28, 0.0]
+        rpy: [0, 0, 0.28]
+        num_models_x: 1
+        num_models_y: 1
+  bin6:
+    models:
+      disk_part:
+        xyz_start: [0.28, 0.2, 0.0]
+        xyz_end: [0.28, 0.4, 0.0]
+        rpy: [0, 0, 0.28]
+        num_models_x: 1
+        num_models_y: 2
+
+belt_models:
+  pulley_part:
+    28.0:
+      pose:
+        xyz: [0.0, 0.0, 0.1]
+        rpy: [0, 0, 0.28]
+
+random_seed: 28
+
+faulty_products:
+  - pulley_part_71

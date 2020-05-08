@@ -1,0 +1,122 @@
+# ARIAC 2019 Final 08
+# Agility challenges: Dropped products, Sensor Blackout, Faulty Products
+# One order two shipments
+# Parts dropped, possibly during sensor blackout, including one extra part out of reach
+# One arm must hand off parts to the other arm
+# Non faulty parts of one product type only available from conveyor
+
+time_limit: 500
+
+options:
+  insert_models_over_bins: true
+  spawn_extra_models: true
+  belt_population_cycles: 4
+  gazebo_state_logging: true
+  visualize_drop_regions: false
+
+orders:
+  order_0:
+    announcement_condition: time
+    announcement_condition_value: 0.0
+    shipment_count: 2
+    products:
+      part_0:
+        type: piston_rod_part
+        pose:
+          xyz: [-0.07615321346512764, 0.16079113806050646, 0.0]
+          rpy: [0.0, 0.0, 1.6363418909731449]
+      part_1:
+        type: gasket_part
+        pose:
+          xyz: [0.1253066102071303, -0.0641777541573885, 0.0]
+          rpy: [0.0, 0.0, -2.9502688474125924]
+      part_2:
+        type: gasket_part
+        pose:
+          xyz: [-0.10168559630428695, -0.18451956991910343, 0.0]
+          rpy: [0.0, 0.0, -2.5362707808990277]
+      part_3:
+        type: gear_part
+        pose:
+          xyz: [0.1466066544978441, 0.2740410585554614, 0.0]
+          rpy: [0.0, 0.0, 1.4405378786111234]
+
+models_over_bins:
+  bin1:
+    models:
+      piston_rod_part:
+        xyz_start: [0.1, 0.1, 0.0]
+        xyz_end: [0.45, 0.45, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 1
+        num_models_y: 2
+  bin2:
+    models:
+      gasket_part:
+        xyz_start: [0.15, 0.15, 0.0]
+        xyz_end: [0.35, 0.35, 0.0]
+        rpy: [0, 0, 'pi/2']
+        num_models_x: 3
+        num_models_y: 1
+  bin4:
+    models:
+      piston_rod_part:
+        xyz_start: [0.15, 0.15, 0.0]
+        xyz_end: [0.45, 0.45, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 1
+        num_models_y: 1
+  bin6:
+    models:
+      gasket_part:
+        xyz_start: [0.1, 0.1, 0.0]
+        xyz_end: [0.45, 0.45, 0.0]
+        rpy: [0, 0, 'pi/2']
+        num_models_x: 1
+        num_models_y: 2
+
+belt_models:
+  gear_part:
+    25.0:
+      pose:
+        xyz: [0.0, 0.0, 0.1]
+        rpy: [0, 0, 0]
+
+random_seed: 1
+
+faulty_products:
+  - piston_rod_part_57
+
+drops:
+  drop_regions:
+    bin1_reachable:
+      min:
+        xyz: [-0.65, -2.234, 0.76]
+      max:
+        xyz: [0, -1.584, 1.1]
+      destination:
+        xyz: [-0.04, -1.76, 0.76]
+        rpy: [0, 0, 0.73]
+      product_type_to_drop: piston_rod_part
+    bin2_reachable:
+      min:
+        xyz: [-0.65, -1.467, 0.76]
+      max:
+        xyz: [0, -0.817, 1.1]
+      destination:
+        xyz: [-0.25, -0.91, 0.76]
+        rpy: [0, 0, 2.95]
+      product_type_to_drop: gasket_part
+    bin6_unreachable:
+      min:
+        xyz: [-0.65, 1.598, 0.79]
+      max:
+        xyz: [0, 2.248, 1.1]
+      destination:
+        xyz: [11, 11, 0.76]
+        rpy: [0, 0, 0.77]
+      product_type_to_drop: gasket_part
+
+sensor_blackout:
+  product_count: 1
+  duration: 50

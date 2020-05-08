@@ -1,0 +1,117 @@
+# ARIAC 2019 Final 10
+# Agility challenges: Dropped products, Flipped Products, Faulty Products
+# One order two shipments to opposite AGVs
+# A dropped product lands in the bin land and needs to be flipped again
+# Arms must hand off parts both directions
+# Parts are available from the conveyor, but don't need to be used.
+
+time_limit: 500
+
+options:
+  insert_models_over_bins: true
+  spawn_extra_models: true
+  belt_population_cycles: 1
+  gazebo_state_logging: true
+  visualize_drop_regions: false
+
+orders:
+  order_0:
+    announcement_condition: time
+    announcement_condition_value: 0.0
+    shipment_count: 2
+    destinations: [agv1, agv2]
+    products:
+      part_0:
+        type: pulley_part
+        pose:
+          xyz: [0.09961396349896091, -0.18352296599790935, 0.0]
+          rpy: ['pi', 0.0, 2.7911217277674236]
+      part_1:
+        type: pulley_part
+        pose:
+          xyz: [-0.11328683569837977, 0.01642759263758975, 0.0]
+          rpy: ['pi', 0.0, 1.6837170998522417]
+      part_2:
+        type: pulley_part
+        pose:
+          xyz: [0.11721104030230169, 0.2160921659103794, 0.0]
+          rpy: ['pi', 0.0, 1.578640520457797]
+      part_3:
+        type: gear_part
+        pose:
+          xyz: [-0.1153692749076165, -0.20236630329499278, 0.0]
+          rpy: [0.0, 0.0, 2.064513232380281]
+      part_4:
+        type: gear_part
+        pose:
+          xyz: [-0.08527903193188661, 0.24650401618947632, 0.0]
+          rpy: [0.0, 0.0, 0.519023031751233]
+
+models_over_bins:
+  bin1:
+    models:
+      gear_part:
+        xyz_start: [0.1, 0.1, 0.0]
+        xyz_end: [0.45, 0.45, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 2
+        num_models_y: 2
+  bin3:
+    models:
+      pulley_part:
+        xyz_start: [0.15, 0.35, 0.0]
+        xyz_end: [0.45, 0.45, 0.0]
+        rpy: [0, 0, 3.21]
+        num_models_x: 2
+        num_models_y: 1
+  bin4:
+    models:
+      gear_part:
+        xyz_start: [0.15, 0.15, 0.0]
+        xyz_end: [0.45, 0.45, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 2
+        num_models_y: 1
+  bin5:
+    models:
+      pulley_part:
+        xyz_start: [0.15, 0.45, 0.0]
+        xyz_end: [0.45, 0.45, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 2
+        num_models_y: 1
+  bin6:
+    models:
+      pulley_part:
+        xyz_start: [0.15, 0.15, 0.0]
+        xyz_end: [0.45, 0.45, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 2
+        num_models_y: 2
+
+belt_models:
+  gear_part:
+    30.0:
+      pose:
+        xyz: [0.0, 0.0, 0.1]
+        rpy: [0, 0, 0]
+
+random_seed: 1
+
+faulty_products:
+  - gear_part_147
+  - gear_part_15
+  - pulley_part_5
+  - pulley_part_47
+
+drops:
+  drop_regions:
+    tray_2_to_bin_2:
+      min:
+        xyz: [0.041, -3.513, 0.78]
+      max:
+        xyz: [0.571, -2.783, 1.163]
+      destination:
+        xyz: [-0.25, -0.99, 0.76]
+        rpy: [0, 0, 0.12]
+      product_type_to_drop: pulley_part

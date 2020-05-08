@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="ariac_example">
+
+	<executable package_path="ariac_flexbe_behaviors.ariac_example_sm" class="ariac_exampleSM" />
+	<tagstring>ariac, example</tagstring>
+	<author>Gerard Harkema</author>
+	<date>Thu Apr 16 2020</date>
+	<description>
+		Voorbeeld statemachine voor de ariac 2019 opdracht
+	</description>
+
+
+	<!-- Contained Behaviors -->
+	<contains name="notify_shipment_ready" />
+
+	<!-- Available Parameters -->
+
+</behavior>

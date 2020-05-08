@@ -1,0 +1,102 @@
+# ARIAC 2019 Final 06
+# Agility challenges: Dropped products
+# One order one shipment
+# Product dropped over tray, but is retrievable
+# Can be completed with a single arm
+# Parts are available from conveyor, but not required
+
+time_limit: 500
+
+options:
+  insert_models_over_bins: true
+  spawn_extra_models: true
+  belt_population_cycles: 5
+  gazebo_state_logging: true
+  visualize_drop_regions: false
+
+orders:
+  order_0:
+    announcement_condition: time
+    announcement_condition_value: 0.0
+    shipment_count: 1
+    products:
+      part_0:
+        type: disk_part
+        pose:
+          xyz: [0.10101829079276542, -0.14306056783620755, 0.0]
+          rpy: [0.0, 0.0, 2.7279399053108007]
+      part_1:
+        type: disk_part
+        pose:
+          xyz: [-0.1580541394486329, 0.2488989254470012, 0.0]
+          rpy: [0.0, 0.0, -2.9763630704426696]
+      part_2:
+        type: disk_part
+        pose:
+          xyz: [0.1426210651115818, 0.017563677497825003, 0.0]
+          rpy: [0.0, 0.0, 0.8617225210037356]
+      part_3:
+        type: disk_part
+        pose:
+          xyz: [-0.14802312484432134, 0.08080616361398119, 0.0]
+          rpy: [0.0, 0.0, 2.292119378715477]
+      part_4:
+        type: gear_part
+        pose:
+          xyz: [-0.05684761416381359, -0.28545670658374656, 0.0]
+          rpy: [0.0, 0.0, 0.49676926314370995]
+      part_5:
+        type: gear_part
+        pose:
+          xyz: [-0.1590540483529825, -0.17587961722983841, 0.0]
+          rpy: [0.0, 0.0, 2.730405665608724]
+      part_6:
+        type: gear_part
+        pose:
+          xyz: [0.0662269546333824, 0.2356802777770683, 0.0]
+          rpy: [0.0, 0.0, 0.6397141735211513]
+      part_7:
+        type: gear_part
+        pose:
+          xyz: [-0.024759348904593137, -0.0314263402204325, 0.0]
+          rpy: [0.0, 0.0, -3.0744689749175182]
+
+
+models_over_bins:
+  bin1:
+    models:
+      disk_part:
+        xyz_start: [0.1, 0.1, 0.0]
+        xyz_end: [0.45, 0.45, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 3
+        num_models_y: 3
+  bin3:
+    models:
+      gear_part:
+        xyz_start: [0.1, 0.1, 0.0]
+        xyz_end: [0.45, 0.45, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 4
+        num_models_y: 2
+
+belt_models:
+  disk_part:
+    30.0:
+      pose:
+        xyz: [0.0, 0.0, 0.1]
+        rpy: [0, 0, 0]
+
+random_seed: 1
+
+drops:
+  drop_regions:
+    bin3_reachable:
+      min:
+        xyz: [-0.65, -0.7, 0.8]
+      max:
+        xyz: [0, -0.05, 1.1]
+      destination:
+        xyz: [-0.53, -0.44, 0.76]
+        rpy: [0, 0, 0.5]
+      product_type_to_drop: gear_part

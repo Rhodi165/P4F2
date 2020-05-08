@@ -1,0 +1,59 @@
+# rosservice call /ariac/agv1 "{shipment_type: 'order_0_shipment_0'}"
+# rosservice call /ariac/agv2 "{shipment_type: 'order_0_shipment_1'}"
+# Total score: 30
+
+models_to_spawn:
+  agv2::kit_tray_2:
+    models:
+      part_0:
+        type: gasket_part
+        pose:
+          xyz: [0.10243821273368592, -0.22577765845289074, 0.0]
+          rpy: [0.0, 0.0, -2.9377529918844325]
+      part_1:
+        type: gear_part
+        pose:
+          xyz: [0.17690326817886753, -0.02771077734790761, 0.0]
+          rpy: [0.0, 0.0, -0.8115567367653718]
+      part_2:
+        type: piston_rod_part
+        pose:
+          xyz: [0.09759443245817377, 0.18609293469851598, 0.0]
+          rpy: [0.0, 0.0, 1.2560881239229857]
+      part_3:
+        type: disk_part
+        pose:
+          xyz: [-0.134850491445285, 0.20842822097406893, 0.0]
+          rpy: [0.0, 0.0, 0.7408976128773168]
+      part_4:
+        type: pulley_part
+        pose:
+          xyz: [-0.10445124148093288, -0.029072623768140432, 0.0]
+          rpy: [0.0, 0.0, 0.3641398796322157]
+  agv1::kit_tray_1:
+    models:
+      part_0:
+        type: gasket_part
+        pose:
+          xyz: [0.10243821273368592, -0.22577765845289074, 0.0]
+          rpy: [0.0, 0.0, -2.9377529918844325]
+      part_1:
+        type: gear_part
+        pose:
+          xyz: [0.17690326817886753, -0.02771077734790761, 0.0]
+          rpy: [0.0, 0.0, -0.8115567367653718]
+      part_2:
+        type: piston_rod_part
+        pose:
+          xyz: [0.09759443245817377, 0.18609293469851598, 0.0]
+          rpy: [0.0, 0.0, 1.2560881239229857]
+      part_3:
+        type: disk_part
+        pose:
+          xyz: [-0.134850491445285, 0.20842822097406893, 0.0]
+          rpy: [0.0, 0.0, 0.7408976128773168]
+      part_4:
+        type: pulley_part
+        pose:
+          xyz: [-0.10445124148093288, -0.029072623768140432, 0.0]
+          rpy: [0.0, 0.0, 0.3641398796322157]

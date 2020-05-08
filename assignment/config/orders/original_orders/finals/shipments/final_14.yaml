@@ -1,0 +1,44 @@
+# Teams can get perfect score, but can't spawn models in a way to do so
+# Insted this shows the low priority order on tray 1 and high priority on tray 2
+# Total score: 90
+
+models_to_spawn:
+  agv1::kit_tray_1:
+    models:
+      part_0:
+        type: piston_rod_part
+        pose:
+          xyz: [-0.09586171459963996, -0.198813700739597, 0.0]
+          rpy: [0.0, 0.0, 2.2296237227631757]
+      part_1:
+        type: piston_rod_part
+        pose:
+          xyz: [-0.062041827146135924, 0.19296384131702585, 0.0]
+          rpy: [0.0, 0.0, 1.7603924661476045]
+      part_2:
+        type: gasket_part
+        pose:
+          xyz: [0.12708973190600542, -0.03425059997404359, 0.0]
+          rpy: [0.0, 0.0, 0.4908655702900315]
+  agv2::kit_tray_2:
+    models:
+      part_0:
+        type: disk_part
+        pose:
+          xyz: [0.14033660580563112, 0.2593121149040918, 0.0]
+          rpy: [0.0, 0.0, -0.7917981870014104]
+      part_1:
+        type: gasket_part
+        pose:
+          xyz: [-0.0791434130751314, 0.13658332771584308, 0.0]
+          rpy: [0.0, 0.0, 1.3755349661551026]
+      part_2:
+        type: gear_part
+        pose:
+          xyz: [0.05082085572339484, 0.009172107247973293, 0.0]
+          rpy: [0.0, 0.0, -0.8979552122603938]
+      part_3:
+        type: gear_part
+        pose:
+          xyz: [0.09564663040417393, -0.25713999723039815, 0.0]
+          rpy: [0.0, 0.0, 2.11137503136555]

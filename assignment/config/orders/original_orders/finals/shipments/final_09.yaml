@@ -1,0 +1,60 @@
+# Rename gaskets on tray 1 and tray 2 to avoid faulty product name
+# rosservice call /ariac/agv1 "{shipment_type: 'order_0_shipment_0'}"
+# rosservice call /ariac/agv2 "{shipment_type: 'order_0_shipment_1'}"
+# Total score: 30
+
+models_to_spawn:
+  agv1::kit_tray_1:
+    models:
+      part_0:
+        type: gear_part
+        pose:
+          xyz: [0.1401437791743385, -0.2430740716443244, 0.0]
+          rpy: [0.0, 0.0, -2.970224994950585]
+      part_1:
+        type: gear_part
+        pose:
+          xyz: [0.00853065992852392, 0.20385342637447756, 0.0]
+          rpy: [0.0, 0.0, -2.614044676939403]
+      part_2:
+        type: disk_part
+        pose:
+          xyz: [0.15685667155667665, 0.18001115140365836, 0.0]
+          rpy: [0.0, 0.0, -1.9631534844498388]
+      part_3:
+        type: disk_part
+        pose:
+          xyz: [-0.15747488860980233, 0.12900086768834912, 0.0]
+          rpy: [0.0, 0.0, -2.4128884841752445]
+      part_4:
+        type: gasket_part
+        pose:
+          xyz: [-0.06643858841421434, -0.2002444098412347, 0.0]
+          rpy: [0.0, 0.0, -1.8773456067666263]
+  agv2::kit_tray_2:
+    models:
+      part_0:
+        type: gear_part
+        pose:
+          xyz: [0.1401437791743385, -0.2430740716443244, 0.0]
+          rpy: [0.0, 0.0, -2.970224994950585]
+      part_1:
+        type: gear_part
+        pose:
+          xyz: [0.00853065992852392, 0.20385342637447756, 0.0]
+          rpy: [0.0, 0.0, -2.614044676939403]
+      part_2:
+        type: disk_part
+        pose:
+          xyz: [0.15685667155667665, 0.18001115140365836, 0.0]
+          rpy: [0.0, 0.0, -1.9631534844498388]
+      part_3:
+        type: disk_part
+        pose:
+          xyz: [-0.15747488860980233, 0.12900086768834912, 0.0]
+          rpy: [0.0, 0.0, -2.4128884841752445]
+      part_4:
+        type: gasket_part
+        pose:
+          xyz: [-0.06643858841421434, -0.2002444098412347, 0.0]
+          rpy: [0.0, 0.0, -1.8773456067666263]

@@ -1,0 +1,49 @@
+# rosservice call /ariac/agv1 "{shipment_type: 'order_0_shipment_0'}"
+# rosservice call /ariac/agv2 "{shipment_type: 'order_0_shipment_1'}"
+# Total score: 24
+
+models_to_spawn:
+  agv1::kit_tray_1:
+    models:
+      part_0:
+        type: pulley_part
+        pose:
+          xyz: [-0.02523764080521175, 0.2126086325772568, 0.06]
+          rpy: ['pi', 0.0, -0.310413877311003]
+      part_1:
+        type: gear_part
+        pose:
+          xyz: [-0.18629182790123497, 0.019524717363687216, 0.0]
+          rpy: [0.0, 0.0, -0.19552236125140698]
+      part_2:
+        type: gear_part
+        pose:
+          xyz: [0.14679225413727343, -0.0907437861609244, 0.0]
+          rpy: [0.0, 0.0, 3.016782668458461]
+      part_3:
+        type: gear_part
+        pose:
+          xyz: [0.00331124287628326, -0.18774159642261729, 0.0]
+          rpy: [0.0, 0.0, 0.026033082562790355]
+  agv2::kit_tray_2:
+    models:
+      part_0:
+        type: pulley_part
+        pose:
+          xyz: [-0.02523764080521175, 0.2126086325772568, 0.06]
+          rpy: ['pi', 0.0, -0.310413877311003]
+      part_1:
+        type: gear_part
+        pose:
+          xyz: [-0.18629182790123497, 0.019524717363687216, 0.0]
+          rpy: [0.0, 0.0, -0.19552236125140698]
+      part_2:
+        type: gear_part
+        pose:
+          xyz: [0.14679225413727343, -0.0907437861609244, 0.0]
+          rpy: [0.0, 0.0, 3.016782668458461]
+      part_3:
+        type: gear_part
+        pose:
+          xyz: [0.00331124287628326, -0.18774159642261729, 0.0]
+          rpy: [0.0, 0.0, 0.026033082562790355]

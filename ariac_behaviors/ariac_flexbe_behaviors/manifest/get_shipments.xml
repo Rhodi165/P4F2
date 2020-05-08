@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="get_shipments">
+
+	<executable package_path="ariac_flexbe_behaviors.get_shipments_sm" class="get_shipmentsSM" />
+	<tagstring>logistic</tagstring>
+	<author>Gerard Harkema</author>
+	<date>Sun Apr 19 2020</date>
+	<description>
+		Tests the starting and stopping of the assignment
+
+This example is a part of the order example.
+	</description>
+
+
+	<!-- Contained Behaviors -->
+	<contains name="get_products" />
+
+	<!-- Available Parameters -->
+
+</behavior>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="transport_part_from_bin_to_arv_2">
+
+	<executable package_path="ariac_flexbe_behaviors.transport_part_from_bin_to_arv_2_sm" class="transport_part_from_bin_to_arv_2SM" />
+	<tagstring>ariac</tagstring>
+	<author>Gerard Harkema</author>
+	<date>Wed Apr 22 2020</date>
+	<description>
+		Transports a order part from a bin to its desired agv
+	</description>
+
+
+	<!-- Contained Behaviors -->
+	<contains name="transport_part_form_bin_to_agv_state" />
+
+	<!-- Available Parameters -->
+
+</behavior>

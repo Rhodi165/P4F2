@@ -1,0 +1,115 @@
+# ARIAC 2019 Final 02
+# Agility challenges: Faulty products, flipped products
+# One order two shipments.
+# Both arms must be used, but they don't need to interact.
+# Teams may optionally use parts from conveyor.
+
+time_limit: 500
+
+options:
+  insert_models_over_bins: true
+  spawn_extra_models: true
+  belt_population_cycles: 5
+  gazebo_state_logging: true
+
+orders:
+  order_0:
+    announcement_condition: time
+    announcement_condition_value: 0.0
+    shipment_count: 2
+    destinations: [agv1, agv2]
+    products:
+      part_0:
+        type: pulley_part
+        pose:
+          xyz: [-0.02523764080521175, 0.2126086325772568, 0.0]
+          rpy: ['pi', 0.0, -0.310413877311003]
+      part_1:
+        type: gear_part
+        pose:
+          xyz: [-0.18629182790123497, 0.019524717363687216, 0.0]
+          rpy: [0.0, 0.0, -0.19552236125140698]
+      part_2:
+        type: gear_part
+        pose:
+          xyz: [0.14679225413727343, -0.0907437861609244, 0.0]
+          rpy: [0.0, 0.0, 3.016782668458461]
+      part_3:
+        type: gear_part
+        pose:
+          xyz: [0.00331124287628326, -0.18774159642261729, 0.0]
+          rpy: [0.0, 0.0, 0.026033082562790355]
+
+models_over_bins:
+  bin1:
+    models:
+      gear_part:
+        xyz_start: [0.2, 0.2, 0.0]
+        xyz_end: [0.3, 0.3, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 2
+        num_models_y: 2
+  bin2:
+    models:
+      pulley_part:
+        xyz_start: [0.2, 0.2, 0.0]
+        xyz_end: [0.2, 0.2, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 1
+        num_models_y: 1
+  bin3:
+    models:
+      piston_rod_part:
+        xyz_start: [0.1, 0.1, 0.0]
+        xyz_end: [0.5, 0.4, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 2
+        num_models_y: 2
+  bin4:
+    models:
+      gear_part:
+        xyz_start: [0.1, 0.1, 0.0]
+        xyz_end: [0.5, 0.5, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 3
+        num_models_y: 3
+  bin5:
+    models:
+      pulley_part:
+        xyz_start: [0.3, 0.3, 0.0]
+        xyz_end: [0.3, 0.3, 0.0]
+        rpy: [0, 0, '-pi/4']
+        num_models_x: 1
+        num_models_y: 1
+  bin6:
+    models:
+      gear_part:
+        xyz_start: [0.1, 0.1, 0.0]
+        xyz_end: [0.5, 0.5, 0.0]
+        rpy: [0, 0, '-pi/4']
+        num_models_x: 2
+        num_models_y: 2
+
+belt_models:
+  pulley_part:
+    10.0:
+      pose:
+        xyz: [0.0, 0.0, 0.1]
+        rpy: [0, 0, 0.123]
+  gear_part:
+    20.0:
+      pose:
+        xyz: [0.0, 0.0, 0.1]
+        rpy: [0, 0, 0.456]
+
+random_seed: 1
+
+faulty_products:
+  - gear_part_108
+  - gear_part_114
+  - gear_part_39
+  - gear_part_31
+  - gear_part_29
+  - gear_part_44
+  - gear_part_104
+  - gear_part_54

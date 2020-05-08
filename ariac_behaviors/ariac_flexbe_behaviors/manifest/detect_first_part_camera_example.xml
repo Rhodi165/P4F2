@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="detect_first_part_camera_example">
+
+	<executable package_path="ariac_flexbe_behaviors.detect_first_part_camera_example_sm" class="detect_first_part_camera_exampleSM" />
+	<tagstring>example</tagstring>
+	<author>Gerard Harkema</author>
+	<date>Mon Apr 27 2020</date>
+	<description>
+		Example to detect a part form a partlist biy the camera
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+
+</behavior>

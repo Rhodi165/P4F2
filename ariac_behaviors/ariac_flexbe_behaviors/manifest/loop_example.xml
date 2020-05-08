@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="loop_example">
+
+	<executable package_path="ariac_flexbe_behaviors.loop_example_sm" class="loop_exampleSM" />
+	<tagstring>numeric</tagstring>
+	<author>Gerard Harkema</author>
+	<date>Tue Apr 21 2020</date>
+	<description>
+		Example to test loops
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+
+</behavior>

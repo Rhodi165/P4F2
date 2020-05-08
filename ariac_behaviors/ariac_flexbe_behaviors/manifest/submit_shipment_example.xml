@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="submit_shipment_example">
+
+	<executable package_path="ariac_flexbe_behaviors.submit_shipment_example_sm" class="submit_shipment_exampleSM" />
+	<tagstring>Example of submitting a shipment by the agv</tagstring>
+	<author>Gerard Harkema</author>
+	<date>Sat Apr 25 2020</date>
+	<description>
+		Example of submitting a shipment
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+
+</behavior>

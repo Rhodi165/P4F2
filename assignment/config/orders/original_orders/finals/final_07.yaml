@@ -1,0 +1,123 @@
+# ARIAC 2019 Final 07
+# Agility challenges: Dropped products, Insufficient products
+# One order two shipments
+# Parts dropped out of reach
+# Both arms must be used, but they don't need to interact
+# Parts are available from conveyor, but not required
+
+time_limit: 500
+
+options:
+  insert_models_over_bins: true
+  spawn_extra_models: true
+  belt_population_cycles: 5
+  gazebo_state_logging: true
+  visualize_drop_regions: false
+
+orders:
+  order_0:
+    announcement_condition: time
+    announcement_condition_value: 0.0
+    shipment_count: 2
+    destinations: [agv1, agv2]
+    products:
+      part_0:
+        type: pulley_part
+        pose:
+          xyz: [-0.06459897160443909, 0.18931423971167047, 0.0]
+          rpy: [0.0, 0.0, 2.251494184994545]
+      part_1:
+        type: pulley_part
+        pose:
+          xyz: [0.09621353028172071, -0.20273885417910673, 0.0]
+          rpy: [0.0, 0.0, -0.3974339836341616]
+      part_2:
+        type: gasket_part
+        pose:
+          xyz: [-0.12569751453449626, -0.06556086799174946, 0.0]
+          rpy: [0.0, 0.0, -3.1276584028333083]
+      part_3:
+        type: disk_part
+        pose:
+          xyz: [0.13985153122714666, 0.01690883139442595, 0.0]
+          rpy: [0.0, 0.0, 2.2791816583481133]
+
+models_over_bins:
+  bin1:
+    models:
+      pulley_part:
+        xyz_start: [0.1, 0.1, 0.0]
+        xyz_end: [0.45, 0.45, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 1
+        num_models_y: 2
+  bin2:
+    models:
+      gasket_part:
+        xyz_start: [0.25, 0.25, 0.0]
+        xyz_end: [0.25, 0.25, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 1
+        num_models_y: 1
+  bin3:
+    models:
+      disk_part:
+        xyz_start: [0.25, 0.25, 0.0]
+        xyz_end: [0.25, 0.25, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 1
+        num_models_y: 1
+  bin4:
+    models:
+      disk_part:
+        xyz_start: [0.25, 0.25, 0.0]
+        xyz_end: [0.25, 0.25, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 1
+        num_models_y: 1
+  bin5:
+    models:
+      gasket_part:
+        xyz_start: [0.25, 0.25, 0.0]
+        xyz_end: [0.25, 0.25, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 1
+        num_models_y: 1
+  bin6:
+    models:
+      pulley_part:
+        xyz_start: [0.1, 0.1, 0.0]
+        xyz_end: [0.45, 0.45, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 1
+        num_models_y: 2
+
+belt_models:
+  disk_part:
+    30.0:
+      pose:
+        xyz: [0.0, 0.0, 0.1]
+        rpy: [0, 0, 0]
+
+random_seed: 1
+
+drops:
+  drop_regions:
+    bin1_reachable:
+      min:
+        xyz: [-0.65, -2.234, 0.8]
+      max:
+        xyz: [0, -1.584, 1.1]
+      destination:
+        xyz: [10, 10, 0.76]
+        rpy: [0, 0, 0.5]
+      product_type_to_drop: pulley_part
+    bin2_reachable:
+      min:
+        xyz: [-0.65, -1.467, 0.8]
+      max:
+        xyz: [0, -0.817, 1.1]
+      destination:
+        xyz: [11, 11, 0.76]
+        rpy: [0, 0, 0.5]
+      product_type_to_drop: gasket_part

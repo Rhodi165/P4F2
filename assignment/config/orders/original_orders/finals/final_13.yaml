@@ -1,0 +1,101 @@
+# ARIAC 2019 Final 13
+# Agility challenges: High Priority Order, Insufficient products
+# Two orders one shipment each
+# High priority order uses same parts as first, and there are not enough to complete both orders
+# Parts must be handed off one direction
+# No parts on the conveyor
+
+time_limit: 500
+
+options:
+  insert_models_over_bins: true
+  spawn_extra_models: true
+  belt_population_cycles: 0
+  gazebo_state_logging: true
+
+orders:
+  order_0:
+    announcement_condition: time
+    announcement_condition_value: 0.0
+    shipment_count: 1
+    destinations: [agv1]
+    products:
+      part_0:
+        type: disk_part
+        pose:
+          xyz: [0.13005873348319436, 0.058111514074838555, 0.0]
+          rpy: [0.0, 0.0, -1.6129446957796894]
+      part_1:
+        type: gear_part
+        pose:
+          xyz: [-0.13997117035113135, -0.05005937380169018, 0.0]
+          rpy: [0.0, 0.0, -0.9899529772394806]
+      part_2:
+        type: gear_part
+        pose:
+          xyz: [0.031909604778075196, -0.22963108969021986, 0.0]
+          rpy: [0.0, 0.0, 1.1073468599534255]
+      part_3:
+        type: gear_part
+        pose:
+          xyz: [0.14427819744171022, 0.2308316271102367, 0.0]
+          rpy: [0.0, 0.0, 0.6695723944936787]
+  order_1:
+    announcement_condition: wanted_products
+    announcement_condition_value: 2
+    shipment_count: 1
+    destinations: [agv2]
+    products:
+      part_0:
+        type: gear_part
+        pose:
+          xyz: [0.11879436027792062, 0.08233282947411713, 0.0]
+          rpy: [0.0, 0.0, 1.940899844720251]
+      part_1:
+        type: gear_part
+        pose:
+          xyz: [0.17263085647212173, 0.21109898000259103, 0.0]
+          rpy: [0.0, 0.0, 1.1473931119567906]
+      part_2:
+        type: gear_part
+        pose:
+          xyz: [0.037027842393485166, -0.2804178575347842, 0.0]
+          rpy: [0.0, 0.0, -2.5049041677595376]
+      part_3:
+        type: gear_part
+        pose:
+          xyz: [-0.1222193558113384, -0.18724974018500296, 0.0]
+          rpy: [0.0, 0.0, -1.5750033289477767]
+      part_4:
+        type: gear_part
+        pose:
+          xyz: [-0.11119390442956344, 0.02162071587881631, 0.0]
+          rpy: [0.0, 0.0, -0.8123898828690379]
+
+models_over_bins:
+  bin4:
+    models:
+      disk_part:
+        xyz_start: [0.2, 0.2, 0.0]
+        xyz_end: [0.2, 0.2, 0.0]
+        rpy: [0, 0, 4.56]
+        num_models_x: 1
+        num_models_y: 1
+  bin5:
+    models:
+      gear_part:
+        xyz_start: [0.25, 0.25, 0.0]
+        xyz_end: [0.25, 0.25, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 1
+        num_models_y: 1
+  bin6:
+    models:
+      gear_part:
+        xyz_start: [0.15, 0.15, 0.0]
+        xyz_end: [0.4, 0.4, 0.0]
+        rpy: [0, 0, 1.2]
+        num_models_x: 2
+        num_models_y: 2
+
+random_seed: 1

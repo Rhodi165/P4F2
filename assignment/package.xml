@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>assignment</name>
+  <version>0.1.0</version>
+  <description>Assignment</description>
+  <maintainer email="GA.Harkema@avans.nl">GerardHarkema</maintainer>
+
+  <license>Apache 2.0</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>osrf_gear</depend>
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_srvs</depend>
+  <depend>tf2_geometry_msgs</depend>
+  <depend>trajectory_msgs</depend>
+
+  <export>
+    <flexbe_behaviors />
+  </export>
+
+</package>

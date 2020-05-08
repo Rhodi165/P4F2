@@ -1,0 +1,56 @@
+# Example perfect shipments for qual_a_2 order_0
+models_to_spawn:
+  agv1::kit_tray_1:
+    models:
+      part_0:
+        type: order_part1
+        pose:
+          xyz: [0.11, -0.21, 0]
+          rpy: [0 , 0, 'pi/2']
+      part_1:
+        type: order_part2
+        pose:
+          xyz: [-0.11, -0.21, 0]
+          rpy: [0, 0, '-pi/2']
+      part_2:
+        type: order_part3
+        pose:
+          xyz: [0.13, 0.16, 0]
+          rpy: [0, 0, 0]
+      part_3:
+        type: order_part4
+        pose:
+          xyz: [-0.11, 0.18, 0]
+          rpy: [0, 0, 0]
+      part_4:
+        type: order_part5
+        pose:
+          xyz: [0.0, 0.0, 0]
+          rpy: [0, 0, 'pi']
+  agv2::kit_tray_2:
+    models:
+      part_0:
+        type: order_part1
+        pose:
+          xyz: [0.11, -0.21, 0]
+          rpy: [0 , 0, 'pi/2']
+      part_1:
+        type: order_part2
+        pose:
+          xyz: [-0.11, -0.21, 0]
+          rpy: [0, 0, '-pi/2']
+      part_2:
+        type: order_part3
+        pose:
+          xyz: [0.13, 0.16, 0]
+          rpy: [0, 0, 0]
+      part_3:
+        type: order_part4
+        pose:
+          xyz: [-0.11, 0.18, 0]
+          rpy: [0, 0, 0]
+      part_4:
+        type: order_part5
+        pose:
+          xyz: [0.0, 0.0, 0]
+          rpy: [0, 0, 'pi']

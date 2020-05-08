@@ -1,0 +1,103 @@
+# ARIAC 2019 Final 04
+# Agility challenges: Faulty products
+# One order two shipments
+# Arms required to hand off parts both directions
+# Parts available from conveyor, but they don't need to be used
+
+time_limit: 500
+
+options:
+  insert_models_over_bins: true
+  spawn_extra_models: true
+  belt_population_cycles: 5
+  gazebo_state_logging: true
+
+orders:
+  order_0:
+    announcement_condition: time
+    announcement_condition_value: 0.0
+    shipment_count: 2
+    destinations: [agv1, agv2]
+    products:
+      part_0:
+        type: piston_rod_part
+        pose:
+          xyz: [-0.08350709759815304, 0.1695963093821832, 0.0]
+          rpy: [0.0, 0.0, 2.8908308906144544]
+      part_1:
+        type: piston_rod_part
+        pose:
+          xyz: [-0.09109186952998702, -0.16989074826826872, 0.0]
+          rpy: [0.0, 0.0, -1.4648553385827445]
+      part_2:
+        type: gear_part
+        pose:
+          xyz: [0.1649425957310341, 0.13981045776529877, 0.0]
+          rpy: [0.0, 0.0, 0.08208133029170472]
+      part_3:
+        type: gear_part
+        pose:
+          xyz: [0.09322330722454786, 0.00020363254614047532, 0.0]
+          rpy: [0.0, 0.0, -2.7911728240474627]
+      part_4:
+        type: disk_part
+        pose:
+          xyz: [0.1534737050560328, -0.21747458489187815, 0.0]
+          rpy: [0.0, 0.0, 2.701975188161187]
+
+models_over_bins:
+  bin1:
+    models:
+      piston_rod_part:
+        xyz_start: [0.15, 0.15, 0.0]
+        xyz_end: [0.35, 0.35, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 2
+        num_models_y: 2
+  bin2:
+    models:
+      gear_part:
+        xyz_start: [0.15, 0.15, 0.0]
+        xyz_end: [0.4, 0.4, 0.0]
+        rpy: [0, 0, 1.23]
+        num_models_x: 1
+        num_models_y: 2
+  bin3:
+    models:
+      disk_part:
+        xyz_start: [0.15, 0.15, 0.0]
+        xyz_end: [0.35, 0.35, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 2
+        num_models_y: 1
+  bin5:
+    models:
+      piston_rod_part:
+        xyz_start: [0.15, 0.15, 0.0]
+        xyz_end: [0.35, 0.35, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 1
+        num_models_y: 2
+  bin6:
+    models:
+      gear_part:
+        xyz_start: [0.15, 0.15, 0.0]
+        xyz_end: [0.4, 0.4, 0.0]
+        rpy: [0, 0, 1.23]
+        num_models_x: 2
+        num_models_y: 2
+
+belt_models:
+  disk_part:
+    15.0:
+      pose:
+        xyz: [0.0, 0.0, 0.1]
+        rpy: [0, 0, 0]
+
+random_seed: 1
+
+faulty_products:
+  - piston_rod_part_136
+  - piston_rod_part_57
+  - gear_part_90
+  - gear_part_32

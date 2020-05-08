@@ -1,0 +1,120 @@
+# ARIAC 2019 Final 11
+# Agility challenges: High Priority Order, Order Update
+# One order two shipments to any agv
+# High priority order uses most parts from first
+# Order update for high priority order changes parts used
+# Can be completed with a single arm
+# Parts are available from the conveyor, but don't need to be used.
+
+time_limit: 500
+
+options:
+  insert_models_over_bins: true
+  spawn_extra_models: true
+  belt_population_cycles: 3
+  gazebo_state_logging: true
+
+orders:
+  order_0:
+    announcement_condition: time
+    announcement_condition_value: 0.0
+    shipment_count: 1
+    products:
+      part_0:
+        type: piston_rod_part
+        pose:
+          xyz: [-0.06870524237459816, 0.16513408089821438, 0.0]
+          rpy: [0.0, 0.0, -0.4772548085085999]
+      part_1:
+        type: gasket_part
+        pose:
+          xyz: [-0.05078365040459856, -0.22669923076536472, 0.0]
+          rpy: [0.0, 0.0, -2.793364749135079]
+      part_2:
+        type: gear_part
+        pose:
+          xyz: [0.17438480904042647, 0.19295854768866144, 0.0]
+          rpy: [0.0, 0.0, -0.09598837926976822]
+  order_1:
+    announcement_condition: wanted_products
+    announcement_condition_value: 1
+    shipment_count: 1
+    products:
+      part_0:
+        type: piston_rod_part
+        pose:
+          xyz: [-0.04518404115270471, -0.11111163895070847, 0.0]
+          rpy: [0.0, 0.0, -0.28404135428757593]
+      part_1:
+        type: gasket_part
+        pose:
+          xyz: [-0.08928056812448716, 0.22914688677545164, 0.0]
+          rpy: [0.0, 0.0, -2.3128904014512695]
+      part_2:
+        type: gasket_part
+        pose:
+          xyz: [0.12305099343817294, 0.11175344123870512, 0.0]
+          rpy: [0.0, 0.0, -1.1248920312482862]
+  order_1_update_0:
+    announcement_condition: unwanted_products
+    announcement_condition_value: 2
+    shipment_count: 1
+    products:
+      part_0:
+        type: gear_part
+        pose:
+          xyz: [-0.037357877850951376, 0.2618740782813142, 0.0]
+          rpy: [0.0, 0.0, -2.864192199569667]
+      part_1:
+        type: gear_part
+        pose:
+          xyz: [-0.09331851905098115, -0.14614900477866177, 0.0]
+          rpy: [0.0, 0.0, 0.7821582174245001]
+      part_2:
+        type: gear_part
+        pose:
+          xyz: [0.033146069362867375, -0.13122713451888932, 0.0]
+          rpy: [0.0, 0.0, -0.44342164824248353]
+
+models_over_bins:
+  bin2:
+    models:
+      gasket_part:
+        xyz_start: [0.25, 0.1, 0.0]
+        xyz_end: [0.25, 0.45, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 1
+        num_models_y: 2
+  bin3:
+    models:
+      gear_part:
+        xyz_start: [0.25, 0.25, 0.0]
+        xyz_end: [0.35, 0.35, 0.0]
+        rpy: [0, 0, 3.21]
+        num_models_x: 2
+        num_models_y: 2
+  bin4:
+    models:
+      piston_rod_part:
+        xyz_start: [0.15, 0.15, 0.0]
+        xyz_end: [0.45, 0.45, 0.0]
+        rpy: [0, 0, 0.678]
+        num_models_x: 1
+        num_models_y: 2
+  bin5:
+    models:
+      gasket_part:
+        xyz_start: [0.15, 0.25, 0.0]
+        xyz_end: [0.35, 0.25, 0.0]
+        rpy: [0, 0, 1.2]
+        num_models_x: 2
+        num_models_y: 1
+
+belt_models:
+  gear_part:
+    30.0:
+      pose:
+        xyz: [0.0, 0.0, 0.1]
+        rpy: [0, 0, 0]
+
+random_seed: 1

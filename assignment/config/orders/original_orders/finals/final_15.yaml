@@ -1,0 +1,161 @@
+# ARIAC 2019 Final 15
+# Agility challenges: High Priority Order, Sensor Blackout, Order Update
+# Two orders one shipment each to AGV 1
+# Order update during sensor blackout changes second order to AGV 2
+# Parts must be handed off both directions
+# One part type only available from conveyor
+
+time_limit: 500
+
+options:
+  insert_models_over_bins: true
+  spawn_extra_models: true
+  belt_population_cycles: 6
+  gazebo_state_logging: true
+
+orders:
+  order_0:
+    announcement_condition: time
+    announcement_condition_value: 0.0
+    shipment_count: 1
+    destinations: [agv1]
+    products:
+      part_0:
+        type: gear_part
+        pose:
+          xyz: [-0.12481872718569206, -0.17146168939450904, 0.0]
+          rpy: [0.0, 0.0, 0.13390243016529269]
+      part_1:
+        type: gear_part
+        pose:
+          xyz: [0.0651730076649043, -0.03813143560121485, 0.0]
+          rpy: [0.0, 0.0, 0.35147521176528906]
+      part_2:
+        type: disk_part
+        pose:
+          xyz: [-0.14526977872556493, 0.07988884010186015, 0.0]
+          rpy: [0.0, 0.0, -2.154381324617511]
+      part_3:
+        type: disk_part
+        pose:
+          xyz: [-0.12067485134018698, 0.24647640864919995, 0.0]
+          rpy: [0.0, 0.0, -0.08813024199481534]
+      part_4:
+        type: disk_part
+        pose:
+          xyz: [0.10344477549447284, -0.20792557537944634, 0.0]
+          rpy: [0.0, 0.0, -0.39249315072912117]
+  order_1:
+    announcement_condition: time
+    announcement_condition_value: 20.0
+    shipment_count: 1
+    destinations: [agv1]
+    products:
+      part_0:
+        type: gasket_part
+        pose:
+          xyz: [-0.0996482125791628, -0.20484641752891042, 0.0]
+          rpy: [0.0, 0.0, 1.7103898424142567]
+      part_1:
+        type: gasket_part
+        pose:
+          xyz: [0.02429337264345835, 0.03619238449123563, 0.0]
+          rpy: [0.0, 0.0, 0.6340771865468757]
+      part_2:
+        type: gear_part
+        pose:
+          xyz: [-0.1522341485986328, -0.009219088631403083, 0.0]
+          rpy: [0.0, 0.0, -0.7612620083385595]
+      part_3:
+        type: gear_part
+        pose:
+          xyz: [0.0035451599896921537, 0.24692686638713596, 0.0]
+          rpy: [0.0, 0.0, -3.009625134639582]
+      part_4:
+        type: gear_part
+        pose:
+          xyz: [0.13210551555090638, 0.2542558970715147, 0.0]
+          rpy: [0.0, 0.0, 1.4404445080854966]
+      part_5:
+        type: gear_part
+        pose:
+          xyz: [-0.1355648335303901, 0.22694375804942207, 0.0]
+          rpy: [0.0, 0.0, 1.9144307025371594]
+      part_6:
+        type: gear_part
+        pose:
+          xyz: [0.1185889856767044, -0.24887636726327575, 0.0]
+          rpy: [0.0, 0.0, 2.5019467564575786]
+
+  order_1_update_0:
+    announcement_condition: unwanted_products
+    announcement_condition_value: 2
+    shipment_count: 1
+    destinations: [agv2]
+    products:
+      part_0:
+        type: gasket_part
+        pose:
+          xyz: [0.1106159957385584, 0.21658812455830206, 0.0]
+          rpy: [0.0, 0.0, 2.9374564668681877]
+      part_1:
+        type: gasket_part
+        pose:
+          xyz: [-0.12298848262440143, -0.1722531887372823, 0.0]
+          rpy: [0.0, 0.0, 2.8619693803075865]
+      part_2:
+        type: gear_part
+        pose:
+          xyz: [0.03560548797260374, 0.04323565678316188, 0.0]
+          rpy: [0.0, 0.0, -2.3314259099141155]
+      part_3:
+        type: gear_part
+        pose:
+          xyz: [-0.09346860786711654, 0.11167045441377593, 0.0]
+          rpy: [0.0, 0.0, 3.082011876351526]
+      part_4:
+        type: gear_part
+        pose:
+          xyz: [0.14009250038596904, -0.11711152654128607, 0.0]
+          rpy: [0.0, 0.0, -1.9397151460394997]
+      part_5:
+        type: gear_part
+        pose:
+          xyz: [0.155207596662307, -0.2448897363076586, 0.0]
+          rpy: [0.0, 0.0, 1.553619751978907]
+      part_6:
+        type: gear_part
+        pose:
+          xyz: [-0.13213185837892952, 0.26718667026940496, 0.0]
+          rpy: [0.0, 0.0, -1.806864835949205]
+
+models_over_bins:
+  bin1:
+    models:
+      gear_part:
+        xyz_start: [0.15, 0.15, 0.0]
+        xyz_end: [0.45, 0.45, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 2
+        num_models_y: 4
+  bin6:
+    models:
+      gasket_part:
+        xyz_start: [0.2, 0.15, 0.0]
+        xyz_end: [0.2, 0.4, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 1
+        num_models_y: 2
+
+belt_models:
+  disk_part:
+    35.0:
+      pose:
+        xyz: [0.0, 0.0, 0.1]
+        rpy: [0, 0, 0]
+
+random_seed: 1
+
+sensor_blackout:
+  product_count: 2
+  duration: 60

@@ -1,0 +1,149 @@
+# ARIAC 2019 Final 09
+# Agility challenges: Dropped products, Order Update, Faulty Products
+# One order two shipments to AGV 1
+# Order update changes second destination to AGV 2
+# Parts dropped, above tray
+# Arms must hand off parts both directions
+# Non faulty parts of one product type only available from conveyor
+
+time_limit: 500
+
+options:
+  insert_models_over_bins: true
+  spawn_extra_models: true
+  belt_population_cycles: 5
+  gazebo_state_logging: true
+  visualize_drop_regions: False
+
+orders:
+  order_0:
+    announcement_condition: time
+    announcement_condition_value: 0.0
+    shipment_count: 2
+    destinations: [agv1, agv1]
+    products:
+      part_0:
+        type: gear_part
+        pose:
+          xyz: [0.1401437791743385, -0.2430740716443244, 0.0]
+          rpy: [0.0, 0.0, -2.970224994950585]
+      part_1:
+        type: gear_part
+        pose:
+          xyz: [0.00853065992852392, 0.20385342637447756, 0.0]
+          rpy: [0.0, 0.0, -2.614044676939403]
+      part_2:
+        type: disk_part
+        pose:
+          xyz: [0.15685667155667665, 0.18001115140365836, 0.0]
+          rpy: [0.0, 0.0, -1.9631534844498388]
+      part_3:
+        type: disk_part
+        pose:
+          xyz: [-0.15747488860980233, 0.12900086768834912, 0.0]
+          rpy: [0.0, 0.0, -2.4128884841752445]
+      part_4:
+        type: gasket_part
+        pose:
+          xyz: [-0.06643858841421434, -0.2002444098412347, 0.0]
+          rpy: [0.0, 0.0, -1.8773456067666263]
+  order_0_update_0:
+    announcement_condition: wanted_products
+    announcement_condition_value: 4
+    shipment_count: 2
+    destinations: [agv1, agv2]
+    products:
+      part_0:
+        type: gear_part
+        pose:
+          xyz: [0.1401437791743385, -0.2430740716443244, 0.0]
+          rpy: [0.0, 0.0, -2.970224994950585]
+      part_1:
+        type: gear_part
+        pose:
+          xyz: [0.00853065992852392, 0.20385342637447756, 0.0]
+          rpy: [0.0, 0.0, -2.614044676939403]
+      part_2:
+        type: disk_part
+        pose:
+          xyz: [0.15685667155667665, 0.18001115140365836, 0.0]
+          rpy: [0.0, 0.0, -1.9631534844498388]
+      part_3:
+        type: disk_part
+        pose:
+          xyz: [-0.15747488860980233, 0.12900086768834912, 0.0]
+          rpy: [0.0, 0.0, -2.4128884841752445]
+      part_4:
+        type: gasket_part
+        pose:
+          xyz: [-0.06643858841421434, -0.2002444098412347, 0.0]
+          rpy: [0.0, 0.0, -1.8773456067666263]
+
+models_over_bins:
+  bin1:
+    models:
+      disk_part:
+        xyz_start: [0.1, 0.1, 0.0]
+        xyz_end: [0.45, 0.45, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 2
+        num_models_y: 2
+  bin2:
+    models:
+      gasket_part:
+        xyz_start: [0.15, 0.35, 0.0]
+        xyz_end: [0.35, 0.35, 0.0]
+        rpy: [0, 0, 3.21]
+        num_models_x: 2
+        num_models_y: 1
+  bin6:
+    models:
+      gear_part:
+        xyz_start: [0.15, 0.15, 0.0]
+        xyz_end: [0.45, 0.45, 0.0]
+        rpy: [0, 0, 0]
+        num_models_x: 2
+        num_models_y: 2
+
+belt_models:
+  gasket_part:
+    25.0:
+      pose:
+        xyz: [0.0, 0.0, 0.1]
+        rpy: [0, 0, 0]
+
+random_seed: 1
+
+faulty_products:
+  - gasket_part_119
+  - gasket_part_122
+
+drops:
+  drop_regions:
+    tray_2_reachable:
+      min:
+        xyz: [0.041, -3.513, 0.78]
+      max:
+        xyz: [0.571, -2.783, 1.163]
+      destination:
+        xyz: [0.385, -3.318, 0.83]
+        rpy: [0, 0, 2.508]
+      product_type_to_drop: gasket_part
+    tray_2_reachable_1:
+      min:
+        xyz: [0.041, -3.513, 0.78]
+      max:
+        xyz: [0.571, -2.783, 1.163]
+      destination:
+        xyz: [0.453, -2.94, 0.83]
+        rpy: [0, 0, -1.06]
+      product_type_to_drop: gear_part
+    tray_2_reachable_2:
+      min:
+        xyz: [0.041, -3.513, 0.78]
+      max:
+        xyz: [0.571, -2.783, 1.163]
+      destination:
+        xyz: [0.14, -3.219, 0.83]
+        rpy: [0, 0, -2.04]
+      product_type_to_drop: disk_part

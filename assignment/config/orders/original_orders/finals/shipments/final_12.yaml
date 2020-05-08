@@ -1,0 +1,45 @@
+# Rename pulley on tray 2 to avoid having same name as a faulty part
+# rosservice call /ariac/agv1 "{shipment_type: 'order_0_shipment_0'}"
+# rosservice call /ariac/agv2 "{shipment_type: 'order_1_shipment_0'}"
+# Total score: 39
+
+models_to_spawn:
+  agv1::kit_tray_1:
+    models:
+      part_0:
+        type: disk_part
+        pose:
+          xyz: [-0.08628362792008677, 0.041515328806660534, 0.0]
+          rpy: [0.0, 0.0, -0.8613268580663047]
+      part_1:
+        type: disk_part
+        pose:
+          xyz: [-0.0004714645453549049, -0.24097266533481954, 0.0]
+          rpy: [0.0, 0.0, -2.9306520458590706]
+      part_2:
+        type: gasket_part
+        pose:
+          xyz: [0.0716901213673026, 0.1706761304708202, 0.0]
+          rpy: [0.0, 0.0, -1.4415060538198634]
+      part_3:
+        type: gear_part
+        pose:
+          xyz: [0.17636108642576714, -0.03567600775231927, 0.0]
+          rpy: [0.0, 0.0, 2.970572885668707]
+  agv2::kit_tray_2:
+    models:
+      part_0:
+        type: pulley_part
+        pose:
+          xyz: [0.1108846351123259, 0.005466378855429943, 0.0]
+          rpy: [0.0, 0.0, -2.2305646396214693]
+      part_1:
+        type: piston_rod_part
+        pose:
+          xyz: [-0.09695505728058401, 0.19809153383037872, 0.0]
+          rpy: [0.0, 0.0, 1.0762961092446002]
+      part_2:
+        type: piston_rod_part
+        pose:
+          xyz: [-0.09086755057577971, -0.1977951983990695, 0.0]
+          rpy: [0.0, 0.0, -0.47165352201541166]
