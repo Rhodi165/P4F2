@@ -4,5 +4,43 @@ sensors:
     pose:
       xyz: [1.6, 2.25, 0.91]
       rpy: [0, 0, 'pi']
-
-
+  logical_camera_binL:
+    type: logical_camera
+    pose:
+      xyz: [-0.3, 0.383, 1.6]
+      rpy: [0, 'pi/2', 0]
+  logical_camera_agvL:
+    type: logical_camera
+    pose:
+      xyz: [0.3, 3.15, 1.5]
+      rpy: [0, 'pi/2', 0]
+  logical_camera_agvR:
+    type: logical_camera
+    pose:
+      xyz: [0.3, -3.15, 1.5]
+      rpy: [0, 'pi/2', 0]
+  logical_camera_binR:
+    type: logical_camera
+    pose:
+      xyz: [-0.3, -0.383, 1.6]
+      rpy: [0, 'pi/2', 0]
+  logical_camera_pakking:
+    type: logical_camera
+    pose:
+      xyz: [-0.3, 1.916, 1.6]
+      rpy: [0, 'pi/2', 0]
+  logical_camera_pulley:
+    type: logical_camera
+    pose:
+      xyz: [-0.3, 1.15, 1.6]
+      rpy: [0, 'pi/2', 0]
+  logical_camera_drijfstang:
+    type: logical_camera
+    pose:
+      xyz: [-0.3, -1.15, 1.6]
+      rpy: [0, 'pi/2', 0]
+  logical_camera_tandwiel:
+    type: logical_camera
+    pose:
+      xyz: [-0.3, -1.916, 1.6]
+      rpy: [0, 'pi/2', 0]
