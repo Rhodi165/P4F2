@@ -43,7 +43,7 @@
         <joint name="wrist_2_joint" value="0" />
         <joint name="wrist_3_joint" value="0" />
     </group_state>
-    <group_state name="bin1.1PreGrasp" group="manipulator">
+    <group_state name="bin1_1PreGrasp" group="manipulator">
         <joint name="linear_arm_actuator_joint" value="0.25" />
         <joint name="shoulder_pan_joint" value="2.05" />
         <joint name="shoulder_lift_joint" value="-0.63" />
@@ -52,7 +52,7 @@
         <joint name="wrist_2_joint" value="-1.51" />
         <joint name="wrist_3_joint" value="0" />
     </group_state>
-    <group_state name="bin2.1PreGrasp" group="manipulator">
+    <group_state name="bin2_1PreGrasp" group="manipulator">
         <joint name="linear_arm_actuator_joint" value="0.25" />
         <joint name="shoulder_pan_joint" value="2.89" />
         <joint name="shoulder_lift_joint" value="-0.88" />
@@ -61,7 +61,7 @@
         <joint name="wrist_2_joint" value="-1.64" />
         <joint name="wrist_3_joint" value="0" />
     </group_state>
-    <group_state name="bin3.1PreGrasp" group="manipulator">
+    <group_state name="bin3_1PreGrasp" group="manipulator">
         <joint name="linear_arm_actuator_joint" value="0.25" />
         <joint name="shoulder_pan_joint" value="3.90" />
         <joint name="shoulder_lift_joint" value="-0.63" />
@@ -70,7 +70,7 @@
         <joint name="wrist_2_joint" value="-1.51" />
         <joint name="wrist_3_joint" value="0" />
     </group_state>
-    <group_state name="bin3.2PreGrasp" group="manipulator">
+    <group_state name="bin3_2PreGrasp" group="manipulator">
         <joint name="linear_arm_actuator_joint" value="0.50" />
         <joint name="shoulder_pan_joint" value="2.05" />
         <joint name="shoulder_lift_joint" value="-0.63" />
@@ -79,7 +79,7 @@
         <joint name="wrist_2_joint" value="-1.51" />
         <joint name="wrist_3_joint" value="0" />
     </group_state>
-    <group_state name="bin4.1PreGrasp" group="manipulator">
+    <group_state name="bin4_1PreGrasp" group="manipulator">
         <joint name="linear_arm_actuator_joint" value="-0.50" />
         <joint name="shoulder_pan_joint" value="3.90" />
         <joint name="shoulder_lift_joint" value="-0.63" />
@@ -88,7 +88,7 @@
         <joint name="wrist_2_joint" value="-1.51" />
         <joint name="wrist_3_joint" value="0" />
     </group_state>
-    <group_state name="bin4.2PreGrasp" group="manipulator">
+    <group_state name="bin4_2PreGrasp" group="manipulator">
         <joint name="linear_arm_actuator_joint" value="-0.25" />
         <joint name="shoulder_pan_joint" value="2.05" />
         <joint name="shoulder_lift_joint" value="-0.63" />
@@ -97,7 +97,7 @@
         <joint name="wrist_2_joint" value="-1.51" />
         <joint name="wrist_3_joint" value="0" />
     </group_state>
-    <group_state name="bin5.2PreGrasp" group="manipulator">
+    <group_state name="bin5_2PreGrasp" group="manipulator">
         <joint name="linear_arm_actuator_joint" value="-0.25" />
         <joint name="shoulder_pan_joint" value="2.89" />
         <joint name="shoulder_lift_joint" value="-0.88" />
@@ -106,7 +106,7 @@
         <joint name="wrist_2_joint" value="-1.64" />
         <joint name="wrist_3_joint" value="0" />
     </group_state>
-    <group_state name="bin6.2PreGrasp" group="manipulator">
+    <group_state name="bin6_2PreGrasp" group="manipulator">
         <joint name="linear_arm_actuator_joint" value="-0.25" />
         <joint name="shoulder_pan_joint" value="3.90" />
         <joint name="shoulder_lift_joint" value="-0.63" />

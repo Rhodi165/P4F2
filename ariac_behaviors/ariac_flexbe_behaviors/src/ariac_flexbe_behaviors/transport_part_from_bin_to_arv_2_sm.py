@@ -49,17 +49,17 @@ class transport_part_from_bin_to_arv_2SM(Behavior):
 
 
 	def create(self):
-		# x:1253 y:57, x:671 y:211
+		# x:1413 y:56, x:671 y:211
 		_state_machine = OperatableStateMachine(outcomes=['finished', 'failed'])
 		_state_machine.userdata.shipments = []
 		_state_machine.userdata.order_id = ''
 		_state_machine.userdata.number_of_shipments = 0
-		_state_machine.userdata.shipment_index = 0
+		_state_machine.userdata.shipment_index = 1
 		_state_machine.userdata.shipment_type = ''
 		_state_machine.userdata.agv_id = ''
 		_state_machine.userdata.products = []
 		_state_machine.userdata.number_of_products = 0
-		_state_machine.userdata.product_index = 0
+		_state_machine.userdata.product_index = 1
 		_state_machine.userdata.part_type = ''
 		_state_machine.userdata.part_pose = []
 
@@ -76,34 +76,34 @@ class transport_part_from_bin_to_arv_2SM(Behavior):
 										transitions={'continue': 'GetOrder'},
 										autonomy={'continue': Autonomy.Off})
 
-			# x:369 y:42
+			# x:391 y:18
 			OperatableStateMachine.add('GetProductsFromShipment',
 										GetProductsFromShipmentState(),
 										transitions={'continue': 'GetPartFromProducts', 'invalid_index': 'failed'},
 										autonomy={'continue': Autonomy.Off, 'invalid_index': Autonomy.Off},
 										remapping={'shipments': 'shipments', 'index': 'shipment_index', 'shipment_type': 'shipment_type', 'agv_id': 'agv_id', 'products': 'products', 'number_of_products': 'number_of_products'})
 
-			# x:574 y:43
+			# x:658 y:33
 			OperatableStateMachine.add('GetPartFromProducts',
 										GetPartFromProductsState(),
 										transitions={'continue': 'transport_part_form_bin_to_agv_state', 'invalid_index': 'failed'},
 										autonomy={'continue': Autonomy.Off, 'invalid_index': Autonomy.Off},
 										remapping={'products': 'products', 'index': 'product_index', 'type': 'part_type', 'pose': 'part_pose'})
 
-			# x:780 y:44
+			# x:887 y:32
 			OperatableStateMachine.add('transport_part_form_bin_to_agv_state',
 										self.use_behavior(transport_part_form_bin_to_agv_stateSM, 'transport_part_form_bin_to_agv_state'),
 										transitions={'finished': 'EndAssignment', 'failed': 'failed'},
 										autonomy={'finished': Autonomy.Inherit, 'failed': Autonomy.Inherit},
 										remapping={'part_type': 'part_type', 'agv_id': 'agv_id', 'pose_on_agv': 'part_pose'})
 
-			# x:1040 y:45
+			# x:1198 y:40
 			OperatableStateMachine.add('EndAssignment',
 										EndAssignment(),
 										transitions={'continue': 'finished'},
 										autonomy={'continue': Autonomy.Off})
 
-			# x:181 y:44
+			# x:187 y:38
 			OperatableStateMachine.add('GetOrder',
 										GetOrderState(),
 										transitions={'continue': 'GetProductsFromShipment'},
