@@ -13,7 +13,6 @@
 
 	<!-- Contained Behaviors -->
 	<contains name="transport_part_form_bin_to_agv_state" />
-	<contains name="notify_shipment_ready" />
 
 	<!-- Available Parameters -->
 

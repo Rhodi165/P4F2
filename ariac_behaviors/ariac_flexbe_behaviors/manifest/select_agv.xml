@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="Select agv">
+
+	<executable package_path="ariac_flexbe_behaviors.select_agv_sm" class="SelectagvSM" />
+	<tagstring>ariac</tagstring>
+	<author>Lein van Sluijs</author>
+	<date>Wed May 13 2020</date>
+	<description>
+		select the right agv
+	</description>
+
+
+	<!-- Contained Behaviors -->
+	<contains name="select_bin_agv1" />
+
+	<!-- Available Parameters -->
+
+</behavior>

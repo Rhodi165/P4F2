@@ -16,7 +16,6 @@ from ariac_flexbe_behaviors.transport_part_form_bin_to_agv_state_sm import trans
 from ariac_support_flexbe_states.add_numeric_state import AddNumericState
 from ariac_support_flexbe_states.equal_state import EqualState
 from ariac_support_flexbe_states.replace_state import ReplaceState
-from ariac_flexbe_behaviors.notify_shipment_ready_sm import notify_shipment_readySM
 # Additional imports can be added inside the following tags
 # [MANUAL_IMPORT]
 
@@ -41,7 +40,6 @@ class testSM(Behavior):
 
 		# references to used behaviors
 		self.add_behavior(transport_part_form_bin_to_agv_stateSM, 'transport_part_form_bin_to_agv_state')
-		self.add_behavior(notify_shipment_readySM, 'notify_shipment_ready')
 
 		# Additional initialization code can be added inside the following tags
 		# [MANUAL_INIT]
@@ -134,7 +132,7 @@ class testSM(Behavior):
 			# x:1064 y:505
 			OperatableStateMachine.add('EindeShipments',
 										EqualState(),
-										transitions={'true': 'ResetShipments', 'false': 'notify_shipment_ready'},
+										transitions={'true': 'ResetShipments', 'false': 'GetProductsFromShipments'},
 										autonomy={'true': Autonomy.Off, 'false': Autonomy.Off},
 										remapping={'value_a': 'shipment_index', 'value_b': 'number_of_shipments'})
 
@@ -151,12 +149,6 @@ class testSM(Behavior):
 										transitions={'done': 'finished'},
 										autonomy={'done': Autonomy.Off},
 										remapping={'value': 'zero_value', 'result': 'product_index'})
-
-			# x:754 y:492
-			OperatableStateMachine.add('notify_shipment_ready',
-										self.use_behavior(notify_shipment_readySM, 'notify_shipment_ready'),
-										transitions={'finished': 'GetProductsFromShipments', 'failed': 'failed'},
-										autonomy={'finished': Autonomy.Inherit, 'failed': Autonomy.Inherit})
 
 
 		return _state_machine
