@@ -50,7 +50,7 @@ class transport_part_from_bin_to_arv_2SM(Behavior):
 
 	def create(self):
 		# x:1709 y:58, x:671 y:211
-		_state_machine = OperatableStateMachine(outcomes=['finished', 'failed'])
+		_state_machine = OperatableStateMachine(outcomes=['finished', 'failed'], output_keys=['part_type'])
 		_state_machine.userdata.shipments = []
 		_state_machine.userdata.order_id = ''
 		_state_machine.userdata.number_of_shipments = 0
