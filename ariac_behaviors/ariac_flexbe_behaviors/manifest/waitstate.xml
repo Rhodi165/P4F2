@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="Waitstate">
+
+	<executable package_path="ariac_flexbe_behaviors.waitstate_sm" class="WaitstateSM" />
+	<tagstring>ariac</tagstring>
+	<author>Timon Korpershoek</author>
+	<date>Thu May 14 2020</date>
+	<description>
+		wachten na een error
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+
+</behavior>

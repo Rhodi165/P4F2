@@ -24,11 +24,11 @@ from ariac_support_flexbe_states.replace_state import ReplaceState
 
 '''
 Created on Wed May 13 2020
-@author: Lein
+@author: Lein en Timon
 '''
 class testSM(Behavior):
 	'''
-	13-5-2020
+	programma versie 1
 	'''
 
 

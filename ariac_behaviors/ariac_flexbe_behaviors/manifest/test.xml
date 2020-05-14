@@ -4,10 +4,10 @@
 
 	<executable package_path="ariac_flexbe_behaviors.test_sm" class="testSM" />
 	<tagstring></tagstring>
-	<author>Lein</author>
+	<author>Lein en Timon</author>
 	<date>Wed May 13 2020</date>
 	<description>
-		13-5-2020
+		programma versie 1
 	</description>
 
 

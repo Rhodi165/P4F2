@@ -4,7 +4,7 @@
 
 	<executable package_path="ariac_flexbe_behaviors.select_bin_agv1_sm" class="select_bin_agv1SM" />
 	<tagstring>ariac</tagstring>
-	<author>Lein van Sluijs</author>
+	<author>Lein van Sluijs en Timon Korpershoek</author>
 	<date>Wed May 13 2020</date>
 	<description>
 		select the right bin for planning to agv 1
@@ -12,6 +12,7 @@
 
 
 	<!-- Contained Behaviors -->
+	<contains name="Waitstate" />
 
 	<!-- Available Parameters -->
 
