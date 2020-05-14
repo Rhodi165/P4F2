@@ -49,7 +49,7 @@ orders:
           xyz: [-0.11, 0.18, 0]
           rpy: [0, 0, 0]
       part_4:
-        type: order_part5
+        type: order_part2
         pose:
           xyz: [0.0, 0.0, 0]
           rpy: [0, 0, 'pi']
@@ -91,6 +91,12 @@ models_over_bins:
 belt_models:
   disk_part:
     10.0:
+      pose:
+        xyz: [0.0, 0.0, 0.1]
+        rpy: [0, 0, 'pi/2']
+
+  gear_part:
+    3.0:
       pose:
         xyz: [0.0, 0.0, 0.1]
         rpy: [0, 0, 'pi/2']

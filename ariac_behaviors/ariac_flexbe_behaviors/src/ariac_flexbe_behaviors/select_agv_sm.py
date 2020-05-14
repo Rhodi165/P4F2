@@ -46,7 +46,7 @@ class SelectagvSM(Behavior):
 
 	def create(self):
 		# x:636 y:154, x:130 y:401
-		_state_machine = OperatableStateMachine(outcomes=['finished', 'failed'], input_keys=['agv_id', 'bin_location', 'pose_on_agv', 'bin_location'])
+		_state_machine = OperatableStateMachine(outcomes=['finished', 'failed'], input_keys=['agv_id', 'pose_on_agv', 'bin_location'])
 		_state_machine.userdata.agv_id = ''
 		_state_machine.userdata.agv_1 = 'agv1'
 		_state_machine.userdata.agv_2 = 'agv2'

@@ -38,13 +38,14 @@ import rospy
 
 from flexbe_core import EventState, Logger
 from std_srvs.srv import Trigger
-from osrf_gear.srv import GetMaterialLocations
+from osrf_gear.srv import GetMaterialLocations, GetMaterialLocationsRequest, GetMaterialLocationsResponse
+from osrf_gear.msg import StorageUnit
 
 class GetMaterialLocationsState(EventState):
 	'''
 	Gets the location of a specific part
 	># part			string  	Part
-	#> material_locations	StorageUnit[]	Material Locations	
+	#> material_locations	string[]	Material Locations	
 	<= continue 		Given order passed.
 
 
@@ -53,15 +54,27 @@ class GetMaterialLocationsState(EventState):
 	def __init__(self):
 		# Declare outcomes, input_keys, and output_keys by calling the super constructor with the corresponding arguments.
 		super(GetMaterialLocationsState, self).__init__(outcomes = ['continue'], input_keys = ['part'], output_keys = ['material_locations'])
-
+		rospy.wait_for_service('/ariac/material_locations')
+		self.GetMaterialLocations = rospy.ServiceProxy('/ariac/material_locations', GetMaterialLocations)
 
 	def execute(self, userdata):
 		# This method is called periodically while the state is active.
 		# Main purpose is to check state conditions and trigger a corresponding outcome.
 		# If no outcome is returned, the state will stay active.
-     		rospy.wait_for_service('/ariac/material_locations')
-    		response = rospy.ServiceProxy('/ariac/material_locations', GetMaterialLocations)(userdata.part)
-		userdata.material_locations = response.storage_units
+
+		request = GetMaterialLocationsRequest()
+
+		request.material_type = userdata.part
+		response = self.GetMaterialLocations(request)
+
+		locations_list = []
+
+		for storage_unit in response.storage_units:
+			locations_list.append(storage_unit.unit_id)
+
+
+		userdata.material_locations = locations_list
+
 		return 'continue'
 
 	def on_enter(self, userdata):

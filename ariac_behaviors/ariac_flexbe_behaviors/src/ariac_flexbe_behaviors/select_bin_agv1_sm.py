@@ -87,7 +87,7 @@ class select_bin_agv1SM(Behavior):
 			# x:1607 y:55
 			OperatableStateMachine.add('Belt',
 										EqualState(),
-										transitions={'true': 'Testjes', 'false': 'Testjes'},
+										transitions={'true': 'PrintBin5', 'false': 'PrintBin5'},
 										autonomy={'true': Autonomy.Off, 'false': Autonomy.Off},
 										remapping={'value_a': 'bin_location', 'value_b': 'belt'})
 
@@ -111,6 +111,13 @@ class select_bin_agv1SM(Behavior):
 										transitions={'true': 'bin1', 'false': 'Bin_5'},
 										autonomy={'true': Autonomy.Off, 'false': Autonomy.Off},
 										remapping={'value_a': 'bin_location', 'value_b': 'bin_2'})
+
+			# x:1477 y:156
+			OperatableStateMachine.add('PrintBin5',
+										MessageState(),
+										transitions={'continue': 'Testjes'},
+										autonomy={'continue': Autonomy.Off},
+										remapping={'message': 'bin_5'})
 
 
 		return _state_machine
