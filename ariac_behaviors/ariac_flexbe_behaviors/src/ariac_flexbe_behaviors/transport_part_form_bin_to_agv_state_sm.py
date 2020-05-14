@@ -103,14 +103,14 @@ class transport_part_form_bin_to_agv_stateSM(Behavior):
 										MessageState(),
 										transitions={'continue': 'MoseMessage'},
 										autonomy={'continue': Autonomy.Off},
-										remapping={'message': 'material_locations'})
+										remapping={'message': 'bin_location'})
 
 			# x:1286 y:109
 			OperatableStateMachine.add('Select agv',
 										self.use_behavior(SelectagvSM, 'Select agv'),
 										transitions={'finished': 'finished', 'failed': 'failed'},
 										autonomy={'finished': Autonomy.Inherit, 'failed': Autonomy.Inherit},
-										remapping={'agv_id': 'agv_id', 'bin_location': 'bin_location', 'pose_on_agv': 'pose_on_agv', 'bin_location': 'bin_location'})
+										remapping={'agv_id': 'agv_id', 'pose_on_agv': 'pose_on_agv', 'bin_location': 'bin_location'})
 
 
 		return _state_machine

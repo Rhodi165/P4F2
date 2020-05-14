@@ -13,6 +13,7 @@
 
 	<!-- Contained Behaviors -->
 	<contains name="select_bin_agv1" />
+	<contains name="select_bin_agv2" />
 
 	<!-- Available Parameters -->
 
