@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="Pick_object">
+
+	<executable package_path="ariac_flexbe_behaviors.pick_object_sm" class="Pick_objectSM" />
+	<tagstring>ariac, example</tagstring>
+	<author>Lein en Timon</author>
+	<date>Fri May 15 2020</date>
+	<description>
+		state to pick the object
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+
+</behavior>
